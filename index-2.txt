@@ -324,10 +324,10 @@
         <div class="section-title">Accès & Contact</div>
 
         <div class="buttons-grid">
-          <!-- Itinéraire direct vers Sotelem (Google Maps, lien fourni) -->
+          <!-- Itinéraire direct vers Sotelem (lien maps.app) -->
           <a
             class="btn btn-primary"
-            href="https://www.google.com/maps/place/Sotelem+Industrie/@45.245589,5.6609431,601m/data=!3m2!1e3!4b1!4m6!3m5!1s0x478af192f7eab5dd:0xf8d43114f04af211!8m2!3d45.2455853!4d5.663518!16s%2Fg%2F1tph0mnw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
+            href="https://maps.app.goo.gl/uMUf77YtbfPGSqRi6"
             target="_blank"
             rel="noopener"
           >
@@ -335,7 +335,7 @@
             <span>Itinéraire</span>
           </a>
 
-          <!-- Vue carte Google Maps (même lieu) -->
+          <!-- Vue carte Google Maps (lien long classique) -->
           <a
             class="btn btn-secondary"
             href="https://www.google.com/maps/place/Sotelem+Industrie/@45.245589,5.6609431,601m/data=!3m2!1e3!4b1!4m6!3m5!1s0x478af192f7eab5dd:0xf8d43114f04af211!8m2!3d45.2455853!4d5.663518!16s%2Fg%2F1tph0mnw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
@@ -366,7 +366,7 @@
             <span>Nous contacter</span>
           </a>
 
-          <!-- E-mail : bouton qui ouvre l’appli mail sur l’adresse générique -->
+          <!-- E-mail -->
           <a
             class="btn btn-outline"
             href="mailto:info-sotelem@sotelem.com"
@@ -375,7 +375,7 @@
             <span>Nous écrire</span>
           </a>
 
-          <!-- Bouton LinkedIn : à personnaliser avec ton lien, puis la future page entreprise -->
+          <!-- LinkedIn -->
           <a
             class="btn btn-secondary btn-linkedin"
             href="https://www.linkedin.com/"
