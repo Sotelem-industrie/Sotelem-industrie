@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>SOTELEM INDUSTRIE – Contact & Accès</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      /* Couleurs adaptées au logo SOTELEM */
+      --primary: #e30613;      /* rouge logo */
+      --primary-dark: #b0050f;
+      --text-main: #555759;    /* gris texte logo */
+      --text-soft: #7b7d7f;
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --border-soft: #e0e0e0;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      /* 🔴 Fond de page rouge */
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: var(--text-main);
+    }
+
+    .stamp-page {
+      width: 100%;
+      max-width: 900px;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 32px 28px 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 28px;
+      border: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+      .stamp-page {
+        grid-template-columns: 1fr;
+        padding: 24px 18px 18px;
+      }
+      .logo-block {
+        align-items: center;
+        text-align: center;
+      }
+      .right-block {
+        gap: 16px;
+      }
+      .address,
+      .contact,
+      .schedule {
+        text-align: center;
+      }
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-right: 1px solid var(--border-soft);
+      padding-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .logo-block {
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        padding-right: 0;
+        padding-bottom: 18px;
+      }
+    }
+
+    .logo {
+      max-width: 320px;  /* 🔺 Logo un peu plus grand */
+      width: 100%;
+      height: auto;
+    }
+
+    .bandeau {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      margin-top: 8px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .byline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    .tagline {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      line-height: 1.4;
+      margin-top: 6px;
+    }
+
+    .activities {
+      margin-top: 10px;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .activities li::before {
+      content: "•";
+      color: var(--primary);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .right-block {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: space-between;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .address,
+    .contact {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .schedule {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-top: 6px;
+      color: var(--text-soft);
+    }
+
+    .address strong,
+    .contact strong,
+    .schedule strong {
+      font-weight: 600;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 520px) {
+      .buttons-grid {
+        grid-template-columns: 1fr; /* 🔁 Boutons en colonne sur smartphone */
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.11s ease, box-shadow 0.11s ease,
+                  background 0.11s ease, border-color 0.11s ease, color 0.11s ease;
+      white-space: nowrap;
+    }
+
+    .btn span.icon {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 7px 18px rgba(227, 6, 19, 0.32);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 9px 22px rgba(227, 6, 19, 0.45);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--primary);
+      border-color: rgba(227, 6, 19, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(227, 6, 19, 0.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border-color: var(--border-soft);
+    }
+
+    .btn-outline:hover {
+      background: #f4f4f6;
+      transform: translateY(-1px);
+    }
+
+    /* Petit style pour l’icône LinkedIn */
+    .btn-linkedin span.icon {
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      padding: 1px 4px;
+      border: 1px solid currentColor;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="stamp-page">
+    <!-- Bloc gauche : logo + activité -->
+    <section class="logo-block">
+      <!-- Logo officiel SOTELEM (chargé depuis le site) -->
+      <img
+        src="https://www.sotelem.com/wp-content/uploads/2022/09/logo-sotelem-by-portalp.jpg"
+        alt="SOTELEM INDUSTRIE by PORTALP"
+        class="logo"
+      />
+
+      <!-- Bandeau activités local -->
+      <img
+        src="assets/bandeau-sotelem-activites.png"
+        alt="Découpe Laser, Pliage, Montage, Soudure, Peinture"
+        class="bandeau"
+      />
+
+      <div>
+        <div class="company-name">SOTELEM INDUSTRIE</div>
+        <div class="byline">by PORTALP</div>
+
+        <p class="tagline">
+          Tôlerie fine – Mécano-soudure – Traitement de surface<br />
+          Découpe Laser - Pliage - Montage - Soudure - Peinture industrielle
+        </p>
+
+        <ul class="activities">
+          <li>Étude, prototypage et industrialisation</li>
+          <li>Pièce unitaire, petite et moyenne série</li>
+          <li>Acier, inox, aluminium et autres alliages</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bloc droit : coordonnées + boutons -->
+    <section class="right-block">
+      <div>
+        <div class="section-title">Coordonnées</div>
+        <p class="address">
+          <strong>Adresse :</strong><br />
+          Rue de l’Industrie<br />
+          38120 Le Fontanil-Cornillon – France
+        </p>
+
+        <p class="contact">
+          <strong>Tél. :</strong>
+          <a href="tel:+33476759989">04 76 75 99 89</a><br />
+          <strong>E-mail :</strong>
+          <a href="mailto:info-sotelem@sotelem.com">info-sotelem@sotelem.com</a>
+        </p>
+
+        <p class="schedule">
+          <strong>Horaires d'ouverture :</strong><br />
+          Lundi à jeudi : 8h00 – 12h00 / 13h30 – 17h30<br />
+          Vendredi : 8h00 – 12h00 / 13h30 – 16h30
+        </p>
+      </div>
+
+      <div>
+        <div class="section-title">Accès & Contact</div>
+
+        <div class="buttons-grid">
+          <!-- Itinéraire direct vers Sotelem (Google Maps, mode directions) -->
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/dir/?api=1&destination=45.250000,5.666670"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">📍</span>
+            <span>Itinéraire</span>
+          </a>
+
+          <!-- Vue carte Google Maps -->
+          <a
+            class="btn btn-secondary"
+            href="https://www.google.com/maps/search/?api=1&query=SOTELEM%20INDUSTRIE%20Rue%20de%20l%27Industrie%2038120%20Fontanil-Cornillon"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">🗺️</span>
+            <span>Voir sur Google&nbsp;Maps</span>
+          </a>
+
+          <!-- Site internet -->
+          <a
+            class="btn btn-primary"
+            href="https://www.sotelem.com"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">🌐</span>
+            <span>Visiter notre site</span>
+          </a>
+
+          <!-- Téléphone : ouvre l’appli téléphone -->
+          <a
+            class="btn btn-outline"
+            href="tel:+33476759989"
+          >
+            <span class="icon">📞</span>
+            <span>Nous contacter</span>
+          </a>
+
+          <!-- E-mail : bouton qui ouvre l’appli mail sur l’adresse générique -->
+          <a
+            class="btn btn-outline"
+            href="mailto:info-sotelem@sotelem.com"
+          >
+            <span class="icon">✉️</span>
+            <span>Nous écrire</span>
+          </a>
+
+          <!-- Bouton LinkedIn : à personnaliser avec ton lien, puis la future page entreprise -->
+          <a
+            class="btn btn-secondary btn-linkedin"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">in</span>
+            <span>Suivez-nous sur LinkedIn</span>
+          </a>
+        </div>
+
+        <p class="footer-note">
+          Pour plus d'informations, n'hésitez pas à nous contacter.
+        </p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
