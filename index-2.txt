@@ -327,7 +327,7 @@
           <!-- Itinéraire direct vers Sotelem (Google Maps, mode directions) -->
           <a
             class="btn btn-primary"
-            href="https://www.google.com/maps/dir/?api=1&destination=45.250000,5.666670"
+            href="https://www.google.com/maps/place/Sotelem+Industrie/@45.245589,5.6609431,601m/data=!3m2!1e3!4b1!4m6!3m5!1s0x478af192f7eab5dd:0xf8d43114f04af211!8m2!3d45.2455853!4d5.663518!16s%2Fg%2F1tph0mnw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
             target="_blank"
             rel="noopener"
           >
